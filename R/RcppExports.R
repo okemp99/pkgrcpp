@@ -8,6 +8,8 @@
 #' @param y A number as a double
 #' @returns value The sum of the two inputs
 #' @export
+NULL
+
 add_cpp <- function(x, y) {
     .Call(`_pkgrcpp_add_cpp`, x, y)
 }
@@ -22,3 +24,7 @@ sumC <- function(x) {
     .Call(`_pkgrcpp_sumC`, x)
 }
 
+# Register entry points for exported C++ functions
+methods::setLoadAction(function(ns) {
+    .Call('_pkgrcpp_RcppExport_registerCCallable', PACKAGE = 'pkgrcpp')
+})
