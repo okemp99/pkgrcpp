@@ -8,10 +8,16 @@
 #' @param y A number as a double
 #' @returns value The sum of the two inputs
 #' @export
-NULL
-
 add_cpp <- function(x, y) {
     .Call(`_pkgrcpp_add_cpp`, x, y)
+}
+
+approx_pi <- function(N) {
+    .Call(`_pkgrcpp_approx_pi`, N)
+}
+
+approx_pi_dqrng <- function(N) {
+    .Call(`_pkgrcpp_approx_pi_dqrng`, N)
 }
 
 #' Adds a vector of numbers

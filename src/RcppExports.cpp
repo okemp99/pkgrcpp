@@ -2,6 +2,7 @@
 // Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #include "../inst/include/pkgrcpp.h"
+#include <RcppArmadillo.h>
 #include <Rcpp.h>
 #include <string>
 #include <set>
@@ -48,6 +49,28 @@ RcppExport SEXP _pkgrcpp_add_cpp(SEXP xSEXP, SEXP ySEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// approx_pi
+double approx_pi(const int N);
+RcppExport SEXP _pkgrcpp_approx_pi(SEXP NSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type N(NSEXP);
+    rcpp_result_gen = Rcpp::wrap(approx_pi(N));
+    return rcpp_result_gen;
+END_RCPP
+}
+// approx_pi_dqrng
+double approx_pi_dqrng(const int N);
+RcppExport SEXP _pkgrcpp_approx_pi_dqrng(SEXP NSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type N(NSEXP);
+    rcpp_result_gen = Rcpp::wrap(approx_pi_dqrng(N));
+    return rcpp_result_gen;
+END_RCPP
+}
 // sumC
 double sumC(NumericVector x);
 RcppExport SEXP _pkgrcpp_sumC(SEXP xSEXP) {
@@ -78,6 +101,8 @@ RcppExport SEXP _pkgrcpp_RcppExport_registerCCallable() {
 
 static const R_CallMethodDef CallEntries[] = {
     {"_pkgrcpp_add_cpp", (DL_FUNC) &_pkgrcpp_add_cpp, 2},
+    {"_pkgrcpp_approx_pi", (DL_FUNC) &_pkgrcpp_approx_pi, 1},
+    {"_pkgrcpp_approx_pi_dqrng", (DL_FUNC) &_pkgrcpp_approx_pi_dqrng, 1},
     {"_pkgrcpp_sumC", (DL_FUNC) &_pkgrcpp_sumC, 1},
     {"_pkgrcpp_RcppExport_registerCCallable", (DL_FUNC) &_pkgrcpp_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
