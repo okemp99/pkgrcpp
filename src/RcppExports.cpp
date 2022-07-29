@@ -71,6 +71,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// inner_prod
+double inner_prod(arma::vec x, arma::vec y);
+RcppExport SEXP _pkgrcpp_inner_prod(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(inner_prod(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
 // sumC
 double sumC(NumericVector x);
 RcppExport SEXP _pkgrcpp_sumC(SEXP xSEXP) {
@@ -103,6 +115,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_pkgrcpp_add_cpp", (DL_FUNC) &_pkgrcpp_add_cpp, 2},
     {"_pkgrcpp_approx_pi", (DL_FUNC) &_pkgrcpp_approx_pi, 1},
     {"_pkgrcpp_approx_pi_dqrng", (DL_FUNC) &_pkgrcpp_approx_pi_dqrng, 1},
+    {"_pkgrcpp_inner_prod", (DL_FUNC) &_pkgrcpp_inner_prod, 2},
     {"_pkgrcpp_sumC", (DL_FUNC) &_pkgrcpp_sumC, 1},
     {"_pkgrcpp_RcppExport_registerCCallable", (DL_FUNC) &_pkgrcpp_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}

@@ -20,6 +20,10 @@ approx_pi_dqrng <- function(N) {
     .Call(`_pkgrcpp_approx_pi_dqrng`, N)
 }
 
+inner_prod <- function(x, y) {
+    .Call(`_pkgrcpp_inner_prod`, x, y)
+}
+
 #' Adds a vector of numbers
 #'
 #' Return the sum of all numbers in a numeric vector.
