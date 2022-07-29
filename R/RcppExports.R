@@ -2,6 +2,10 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 add_cpp <- function(x, y) {
-    .Call('_pkgrcpp_add_cpp', PACKAGE = 'pkgrcpp', x, y)
+    .Call(`_pkgrcpp_add_cpp`, x, y)
+}
+
+sumC <- function(x) {
+    .Call(`_pkgrcpp_sumC`, x)
 }
 
